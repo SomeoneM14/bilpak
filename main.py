@@ -332,5 +332,5 @@ def start():
     print("test")
     #s.listen()
     conn, addr = s.accept()
-    thread = threading.Thread(target=handle_client(conn, addr)).start() 
+    thread = threading.Thread(target=handle_client,args=(conn, addr)).start() 
 start()
